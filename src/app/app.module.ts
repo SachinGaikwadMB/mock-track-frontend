@@ -1,8 +1,14 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
-import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { AuthModule } from './modules/auth/auth.module';
+import { CoreModule } from './modules/core/core.module';
+import { HomepageModule } from './modules/homepage/homepage.module';
+import { HttpClientModule } from '@angular/common/http';
+import { AppRoutingModule } from './app-routing.module';
+import  { BrowserAnimationsModule} from '@angular/platform-browser/animations'
+import { ToastrModule } from 'ngx-toastr';
 
 @NgModule({
   declarations: [
@@ -10,7 +16,19 @@ import { AppComponent } from './app.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    CoreModule,
+    HomepageModule,
+    AuthModule,
+    HttpClientModule,
+    BrowserAnimationsModule,
+    ToastrModule.forRoot(
+      {
+        timeOut:2500,
+        progressBar:true,
+        closeButton:true
+      }
+    )
   ],
   providers: [],
   bootstrap: [AppComponent]

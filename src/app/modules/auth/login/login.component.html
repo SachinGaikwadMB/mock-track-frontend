@@ -1,0 +1,107 @@
+<div class="container-fluid" id="mainWrapper">
+  <div
+    class="row d-flex align-items-center justify-content-center"
+    style="height: 100vh"
+  >
+    <div class="col-sm-6 col-md-6 col-lg-4 p-5 shadow-lg" id="loginWrapper">
+      <h2 class="text-center">Login</h2>
+
+      <form [formGroup]="loginForm" (ngSubmit)="login()">
+        <div class="mb-4">
+          <label for="exampleInputEmail1" class="form-label"
+            >Email address</label
+          >
+          <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon1">@</span>
+            <input
+              type="text"
+              class="form-control"
+              placeholder="please enter your email here..."
+              aria-label="Username"
+              aria-describedby="basic-addon1"
+              formControlName="email"
+              [class.is-invalid]="
+                this.loginForm.get('email').invalid &&
+                this.loginForm.get('email').touched
+              "
+            />
+          </div>
+          <div
+            *ngIf="
+              this.loginForm.get('email').errors &&
+              this.loginForm.get('email').invalid &&
+              this.loginForm.get('email').touched
+            "
+          >
+            <small
+              class="text-danger fst-italic"
+              *ngIf="this.loginForm.get('email').errors['email']"
+            >
+              *Please enter correct email address!
+            </small>
+
+            <small
+              class="text-danger fst-italic"
+              *ngIf="this.loginForm.get('email').errors['required']"
+            >
+              *This field is madantory!
+            </small>
+          </div>
+        </div>
+        <div class="mb-4">
+          <label for="exampleInputPassword1" class="form-label">Password</label>
+          <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon1">#</span>
+            <input
+              type="password"
+              class="form-control"
+              placeholder="please enter your password here..."
+              aria-label="Username"
+              aria-describedby="basic-addon1"
+              formControlName="password"
+              [class.is-invalid]="
+                this.loginForm.get('password').errors &&
+                this.loginForm.get('password').invalid &&
+                this.loginForm.get('password').touched
+              "
+            />           
+          </div>
+          <div
+            *ngIf="
+              this.loginForm.get('password').errors &&
+              this.loginForm.get('password').invalid &&
+              this.loginForm.get('password').touched
+            "
+          >
+            <small
+              class="text-danger fst-italic"
+              *ngIf="this.loginForm.get('password').errors['password']"
+            >
+              *Please enter correct email address!
+            </small>
+
+            <small
+              class="text-danger fst-italic"
+              *ngIf="this.loginForm.get('password').errors['required']"
+            >
+              *This field is madantory!
+            </small>
+          </div>
+        </div>
+        <div class="d-grid gap-2">  
+          <button
+            class="btn btn-primary"
+            type="submit"
+            [disabled]="loginForm.invalid"
+          >
+            Login
+          </button>
+          <small class="text-end pt-2"
+            >New User?
+            <a href="" routerLink="/auth/register">Register here</a></small
+          >
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

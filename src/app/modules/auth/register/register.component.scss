@@ -1,0 +1,18 @@
+.b1 {
+    border: 2px solid green;
+}
+
+#mainWrapper {
+    background-color: #84C1E4;
+    height: fit-content;
+    overflow: hidden;
+}
+
+#registerWrapper {
+    background: white;
+}
+
+input:focus {
+    border: 1px solid #1A76FB;
+    box-shadow: none !important;
+}

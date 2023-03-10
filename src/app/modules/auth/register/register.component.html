@@ -1,0 +1,180 @@
+   <div class="container-fluid" id="mainWrapper">
+  <div
+    class="row d-flex align-items-center justify-content-center"
+    class="row d-flex align-items-center justify-content-center"
+    style="height: 100vh"
+  >
+    <div
+      class="col-12 col-sm-12 col-md-6 col-lg-4 shadow-lg p-4"
+      id="registerWrapper"
+    >
+      <h2 class="text-center mb-3">Register</h2>
+      <form [formGroup]="registerForm" (ngSubmit)="register()">
+        <div class="mb-2">
+          <label for="name" class="form-label">Name</label>
+          <input
+            type="text"
+            class="form-control"
+            id="name"
+            aria-describedby="nameHelp"
+            formControlName="name"
+            [class.is-invalid]="
+              this.registerForm.get('name').invalid &&
+              this.registerForm.get('name').touched
+            "
+          />
+        </div>
+        <div
+          *ngIf="
+            this.registerForm.get('name').errors &&
+            this.registerForm.get('name').invalid &&
+            this.registerForm.get('name').touched
+          "
+        >
+          <small
+            class="text-danger fst-italic"
+            *ngIf="this.registerForm.get('name').errors['required']"
+          >
+            *This field is mandantory !
+          </small>
+        </div>
+        <div class="mb-2">
+          <label for="email" class="form-label">Email</label>
+          <input
+            type="email"
+            class="form-control"
+            id="email"
+            aria-describedby="emailHelp"
+            formControlName="email"
+            [class.is-invalid]="
+              this.registerForm.get('email').invalid &&
+              this.registerForm.get('email').touched
+            "
+          />
+        </div>
+        <div
+          *ngIf="
+            this.registerForm.get('email').errors &&
+            this.registerForm.get('email').invalid &&
+            this.registerForm.get('email').touched
+          "
+        >
+          <small
+            class="text-danger fst-italic"
+            *ngIf="this.registerForm.get('email').errors['email']"
+          >
+            *Please enter correct email address!
+          </small>
+
+          <small
+            class="text-danger fst-italic"
+            *ngIf="this.registerForm.get('email').errors['required']"
+          >
+            *This field is madantory!
+          </small>
+        </div>
+
+        <div class="mb-2">
+          <label for="mobile" class="form-label">Mobile</label>
+          <input
+            type="text"
+            class="form-control"
+            id="mobile"
+            aria-describedby="mobileHelp"
+            formControlName="mobile"
+            [class.is-invalid]="
+              this.registerForm.get('mobile').invalid &&
+              this.registerForm.get('mobile').touched
+            "
+          />
+        </div>
+        <div
+          *ngIf="
+            this.registerForm.get('mobile').errors &&
+            this.registerForm.get('mobile').invalid &&
+            this.registerForm.get('mobile').touched
+          "
+        >
+         <small
+            class="text-danger fst-italic"
+            *ngIf="this.registerForm.get('mobile').errors['required']"
+          >
+            *This field is madantory!
+          </small>
+        </div>
+
+        <div class="mb-2">
+          <label for="password" class="form-label">Password</label>
+          <input
+            type="password"
+            class="form-control"
+            id="password"
+            formControlName="password"
+            [class.is-invalid]="
+            this.registerForm.get('password').errors && 
+            this.registerForm.get('password').touched
+            "
+          />
+        </div>
+        <div
+        *ngIf="
+          this.registerForm.get('password').errors &&
+          this.registerForm.get('password').invalid &&
+          this.registerForm.get('password').touched
+        "
+      >
+        <small
+          class="text-danger fst-italic"
+          *ngIf="this.registerForm.get('password').errors['required']"
+        >
+          *This field is mandantory !
+        </small>
+      </div>
+
+
+
+        <div class="mb-2">
+          <label for="confirmPassword" class="form-label"
+            >Confirm Password</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            id="confirmPassword"
+            formControlName="confirmPassword"
+            [class.is-invalid]="this.registerForm.get('confirmPassword').invalid &&
+            this.registerForm.get('confirmPassword').touched"
+          />
+        </div>
+
+        <div class="mt-0"
+        *ngIf="
+          this.registerForm.get('confirmPassword').errors &&
+          this.registerForm.get('confirmPassword').invalid &&
+          this.registerForm.get('confirmPassword').touched
+        "
+      >
+        <small
+          class="text-danger fst-italic"
+          *ngIf="this.registerForm.get('confirmPassword').errors['required']"
+        >
+          *This field is mandantory !
+        </small>
+
+        <small class="text-danger fst-italic"
+        *ngIf="this.registerForm.get('confirmPassword').errors['confirmPasswordValidator']"
+        >
+        Password and Confirm Password didn't match!
+        </small>
+      </div>
+        
+        <div class="d-grid">
+          <button type="submit" class="btn btn-primary mt-2" [disabled]="this.registerForm.invalid">Register</button>
+          <small class="text-end mt-2"
+            >Already register? <a href="" routerLink="/auth/login">Login</a></small
+          >
+        </div>
+      </form>
+    </div>
+  </div>
+</div> 

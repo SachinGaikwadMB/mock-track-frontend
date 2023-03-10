@@ -1,0 +1,15 @@
+#mainWrapper {
+  background-color: #84c1e4;
+  height: fit-content;
+}
+
+input:focus,
+button:focus {
+  border: 1px solid #1064d7;
+  box-shadow: none !important;
+}
+
+#loginWrapper {
+  background: white;
+}
+

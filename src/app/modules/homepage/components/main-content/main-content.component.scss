@@ -1,0 +1,64 @@
+@import '../../../../../assets/variables/variables';
+
+// *{
+//     outline: 2px solid green;
+// }
+.b1 {
+    border: 1px solid red;
+}
+
+.b2 {
+    border: 1px solid blue;
+}
+
+#contentWrapper {
+  min-height:580px; 
+  background-color:$background-color;
+  clip-path: polygon(0 0, 100% 0, 88% 100%, 0% 100%);
+}
+
+#examTitile h2{
+    font-size: 42px;
+    font-weight: bolder;
+    line-height: 55px;
+    text-transform: uppercase;
+}
+
+#featureList {
+    li {
+        font-size: 25px;
+        font-weight: 600;
+        line-height: 45px;
+    }
+}
+
+
+.btn-know-more a {
+    color:white;
+    width: 150px;
+    border: 1px solid white;
+    text-align: center;
+    border-radius: 10px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.btn-know-more a:hover{
+    background-color: #fcb900;;
+    color:white;
+}
+
+#imageWrapper{
+    img {
+        height:580px;
+    }
+}
+
+@media screen and (max-width:767px) {
+    #contentWrapper {
+        clip-path: none;
+    }  
+
+}
+
+
