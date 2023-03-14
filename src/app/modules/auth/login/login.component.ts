@@ -13,12 +13,14 @@ import { AuthService } from 'src/app/shared/services/auth.service';
 export class LoginComponent implements OnInit {
   loginForm: FormGroup;
   showPassword: boolean;
+  errorMessage: string;
+  isErrorOccured: boolean = false;
 
   constructor(
     private fb: FormBuilder,
     private authService: AuthService,
     private toastrService: ToastrService,
-    private router : Router
+    private router: Router
   ) {}
 
   ngOnInit(): void {
@@ -33,32 +35,29 @@ export class LoginComponent implements OnInit {
   }
 
   login() {
-    console.log(this.loginForm.value);
-    this.loginForm.value.email, this.loginForm.value.password;
-
-    console.log(this.loginForm.value.email);
-    console.log(this.loginForm.value.password);
-
+   
     const loginModel = new LoginModel(
       this.loginForm.value.email,
       this.loginForm.value.password
     );
 
-    console.log(loginModel);
-
-    this.authService.login(loginModel).subscribe((res) => {
-      console.log(res, '::', 'login component response');
-      if (res['statusCode'] === 200) {  
-        localStorage.setItem('token', res['data']['token']);
-        localStorage.setItem('username', res['data']['username']);
-        this.showSuccess();
-        this.router.navigate(['/dashboard']);
-
-      }
+    this.authService.login(loginModel).subscribe({
+      next: (res) => {
+        console.log(res, '::', 'login component response');
+        if (res['statusCode'] === 200) {
+          localStorage.setItem('token', res['data']['token']);
+          localStorage.setItem('username', res['data']['username']);
+          this.showSuccess();
+          this.router.navigate(['/dashboard']);
+        }
+      },
+      error: (error) => {
+        this.isErrorOccured = true;
+        this.errorMessage = error['error']['error'];
+      },
     });
 
     this.loginForm.reset();
-    
   }
 
   public showSuccess(): void {
