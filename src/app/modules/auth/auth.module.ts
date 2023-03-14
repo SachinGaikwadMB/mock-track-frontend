@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { ReactiveFormsModule } from '@angular/forms';
-import { RouterModule, Routes } from '@angular/router';
+import { Router, RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
   {
@@ -24,11 +24,14 @@ const routes: Routes = [
   imports: [
     CommonModule, 
     ReactiveFormsModule, 
-    RouterModule.forChild(routes)
+    RouterModule.forChild(routes),
+    
   ],
   exports: [
     LoginComponent, 
     RegisterComponent
   ],
 })
-export class AuthModule {}
+export class AuthModule {
+
+}

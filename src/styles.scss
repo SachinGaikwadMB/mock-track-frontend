@@ -1,4 +1,24 @@
 /* You can add global styles to this file, and also import other style files */
 body {
     font-family: 'Poppins', 'sans-serif', 'arial';
+    margin: 0;
+    padding:0;
+
+
 }
+
+
+
+// body::-webkit-scrollbar {
+//     width:10px;
+//     border: 5px;
+//   }
+   
+//   body::-webkit-scrollbar-track {
+//     box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.3);
+//   }
+   
+//   body::-webkit-scrollbar-thumb {
+//     background-color: #6633FF;
+//     outline: 1px solid slategrey;
+//   }
