@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, createNgModuleRef, OnInit } from '@angular/core';
 import { AuthService } from './../../../../shared/services/auth.service';
 
 @Component({
@@ -9,6 +9,7 @@ import { AuthService } from './../../../../shared/services/auth.service';
 export class NavbarComponent implements OnInit {
   isLoggedInUser: boolean = false;
   loggedUsername: string = '';
+  isAdmin : boolean = false;
 
   constructor(private authService: AuthService) {}
 

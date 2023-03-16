@@ -6,8 +6,12 @@
 }
 
 .nav-item {
+  a {
+    border-bottom:3px solid white ;
+  }
+
   a:hover {
-    border-bottom: 2px solid blue;
+    border-bottom: 3px solid blue;
   }
 }
 

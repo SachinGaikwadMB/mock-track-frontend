@@ -13,7 +13,6 @@ import { AuthService } from 'src/app/shared/services/auth.service';
 export class LoginComponent implements OnInit {
   loginForm: FormGroup;
   showPassword: boolean;
-  errorMessage: string;
   isErrorOccured: boolean = false;
 
   constructor(
@@ -49,11 +48,15 @@ export class LoginComponent implements OnInit {
           localStorage.setItem('username', res['data']['username']);
           this.showSuccess();
           this.router.navigate(['/dashboard']);
+          
+          if (res['statusCode'] === 500) {
+            this.isErrorOccured = true;
+          }
         }
       },
       error: (error) => {
         this.isErrorOccured = true;
-        this.errorMessage = error['error']['error'];
+        
       },
     });
 
