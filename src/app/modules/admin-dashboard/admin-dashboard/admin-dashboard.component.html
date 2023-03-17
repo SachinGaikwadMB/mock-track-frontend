@@ -1,21 +1,18 @@
-<app-admin-navbar></app-admin-navbar>
-<div class="container-fluid mt-3">
-  <div class="row">
-    <div class="col-md-2">
-     
-        <div class="sidebar  py-5 collapse navbar-collapse d-md-block">
-         <ul class="menu">
-            <li class="active"><a href=""><i class="fas fa-tachometer-alt "></i>Dashboard</a></li>
-            <li><a href=""><i class="fas fa-user-graduate"></i>Quiz</a></li>
-            <li><a href=""><i class="fa fa-question-circle"></i>Question</a></li>
-            <li><a href=""><i class="fa fa-list-alt" ></i>Category</a></li>
-            <li><a href=""><i class="fas fa-poll"></i>Result</a></li>
-          </ul>
-      </div>
-
+<div class="container-fluid g-0">
+  <app-admin-navbar
+    (sideNavBarToggle)="sideNavStatus = $event"
+  ></app-admin-navbar>
+  <main>
+    <app-admin-sidenav
+      [sideNavStatus]="sideNavStatus"
+      [ngClass]="{ 'app-side-nav-open': sideNavStatus }"
+    >
+    </app-admin-sidenav>
+    <div
+      class="display-area p-5"
+      [ngClass]="{ 'display-area-shrink': sideNavStatus }"
+    >
+     <router-outlet></router-outlet>
     </div>
-    <div class="col-md-9 content-area py-5 ms-2">
-        main content area
-    </div>
-  </div>
+  </main>
 </div>

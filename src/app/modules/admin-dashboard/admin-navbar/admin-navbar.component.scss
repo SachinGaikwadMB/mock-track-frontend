@@ -1,19 +1,11 @@
-.t1 {
-  border: 2px solid red;
+nav {
+  height: 100%;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 15px 25px, rgba(0, 0, 0, 0.05) 0px 5px 10px;
+  background: white;
 }
 
-.navbar-custom {
-  background-color: white;
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
-    rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
-  position: sticky;
-  top: 0;
-}
-
-.admin-profie {
-  width: 55px;
-  height: 55px;
-  border-radius: 50%;
-  background-color: #3f8cbb;
-  color: white;
+.side-nav-btn {
+  display: flex;
+  justify-content: center;
+  font-size: 1.5rem;
 }
