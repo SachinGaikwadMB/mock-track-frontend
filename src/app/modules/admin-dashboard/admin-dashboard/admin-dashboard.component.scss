@@ -37,11 +37,20 @@ app-admin-sidenav {
 .display-area {
   position: absolute;
   left: 60px;
-  width: calc(100% - 250px);
-  background-color: #F3F3F8;
+   width: calc(100% - 60px);
+  background-color: #f3f3f8;
+
 }
 
 .display-area-shrink {
-  width:calc(100% - 250px);
+  width: calc(100% - 250px);
   left: 250px;
+}
+
+
+@media screen and (max-width: 991px){
+  .container-fluid {
+      display: none;
+  }
+  
 }

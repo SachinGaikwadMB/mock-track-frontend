@@ -1,1 +1,121 @@
-<p>quizes works!</p>
+<div class="container-fluid">
+  <div class="row d-flex align-content-center">
+    <div class="col-md-9">
+      <div class="input-group mb-3">
+        <input
+          type="text"
+          class="form-control"
+          placeholder="search here..."
+          aria-label="Recipient's username"
+          aria-describedby="basic-addon2"
+        />
+        <a href="" class="search-icon">
+          <span class="input-group-text" id="basic-addon2"
+            ><i class="fas fa-search"></i
+          ></span>
+        </a>
+      </div>
+    </div>
+
+    <div class="col-md-3">
+      <button
+        class="btn-add"
+        type="submit"
+        data-bs-toggle="modal"
+        data-bs-target="#exampleModal"
+      >
+        Add
+      </button>
+    </div>
+  </div>
+
+  <div class="row mt-3">
+    <div class="col-md-12">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Mock Test Details</h5>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row mt-2">
+    <div class="col-md-12">
+      <div class="card shadow-lg">
+        <div class="card-body">
+          <div class="card">
+            <div class="card-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col">Title</th>
+                    <th scope="col">No.Of Questions</th>
+                    <th scope="col">Max Marks</th>
+                    <th scope="col">Category</th>
+                    <th scope="col">Status</th>
+                    <th scope="col">Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let quiz of quizesData">
+                    <td>{{ quiz.title }}</td>
+                    <td>{{ quiz.numberOfQuestion }}</td>
+                    <td>{{ quiz.maxMarks }}</td>
+                    <td>{{ quiz.category.name }}</td>
+                    <td
+                      [ngClass]="
+                        'quiz.isActive' ? 'text-success' : 'text-warning'
+                      "
+                    >
+                      {{ quiz.isActive ? "Active" : "InActive" }}
+                    </td>
+                    <td>
+                      <a href="" class="text-danger"
+                        ><i class="far fa-trash-alt"></i
+                      ></a>
+                      &nbsp; &nbsp;
+                      <a href="" class="text-info"
+                        ><i class="far fa-edit"></i
+                      ></a>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- =============================== Bootstrap Add New Quiz Model ======================= -->
+<!-- Modal -->
+<div
+  class="modal fade"
+  id="exampleModal"
+  tabindex="-1"
+  aria-labelledby="exampleModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body">...</div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+          Close
+        </button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>

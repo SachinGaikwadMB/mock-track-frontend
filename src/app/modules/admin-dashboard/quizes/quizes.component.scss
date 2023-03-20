@@ -1,0 +1,31 @@
+.btn-add {
+  border: 1px solid gray;
+  padding: 5px 80px;
+  height: fit-content;
+  border-radius: 5px;
+}
+
+.btn-add:hover {
+  background-color: #cfe1fd;
+}
+
+input[type="text"] {
+  border: 1px solid gray;
+  box-shadow: none;
+}
+
+.search-icon {
+  text-decoration: none;
+}
+
+.search-icon span {
+  font-size: 1.5rem;
+}
+
+.search-icon span i {
+  color: white;
+}
+
+.search-icon span i:hover {
+  color: black;
+}

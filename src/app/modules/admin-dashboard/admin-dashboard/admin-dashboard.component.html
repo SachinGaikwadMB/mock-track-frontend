@@ -6,13 +6,22 @@
     <app-admin-sidenav
       [sideNavStatus]="sideNavStatus"
       [ngClass]="{ 'app-side-nav-open': sideNavStatus }"
-    >
+      >
     </app-admin-sidenav>
     <div
       class="display-area p-5"
       [ngClass]="{ 'display-area-shrink': sideNavStatus }"
     >
-     <router-outlet></router-outlet>
+      <router-outlet></router-outlet>
     </div>
   </main>
 </div>
+
+<div class="container">
+<div class="row">
+  <div class="col-md-12 p-5">
+    <h4 class="text-danger text-center">This screen not supported by mobiles and tablets.</h4>
+  </div>
+</div>  
+</div>
+
