@@ -8,12 +8,18 @@ import { QuizesComponent } from './quizes/quizes.component';
 import { QuestionsComponent } from './questions/questions.component';
 import { CategoriesComponent } from './categories/categories.component';
 import { ResultsComponent } from './results/results.component';
+import { AdminSubdashboardComponent } from './admin-subdashboard/admin-subdashboard.component';
 
 const routes: Routes = [
   {
     path: '',
     component: AdminDashboardComponent,
     children: [
+      {
+        path: 'sub-dashboard',
+        component: AdminSubdashboardComponent,
+      },
+
       {
         path: 'quizes',
         component: QuizesComponent,
@@ -43,6 +49,7 @@ const routes: Routes = [
     QuestionsComponent,
     CategoriesComponent,
     ResultsComponent,
+    AdminSubdashboardComponent,
   ],
   imports: [CommonModule, RouterModule.forChild(routes)],
 })
