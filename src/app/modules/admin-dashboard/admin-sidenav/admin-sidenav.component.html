@@ -3,13 +3,13 @@
     <li
       class="nav-list-item"
       *ngFor="let navItem of navItemsList"
-      [ngClass]="{ 'nav-list-open': sideNavStatus }"
-    >
+      [ngClass]="{'nav-list-open': sideNavStatus }"
+      [routerLinkActive]="['active']"
+      >
       <i class="{{ navItem.icon }}"></i>
       <span class="">
-        <a href="" routerLink="{{navItem.path}}">{{ navItem.name }}</a>
+        <a href="" routerLink="{{ navItem.path }}">{{ navItem.name }}</a>
       </span>
-     
     </li>
   </ul>
 </div>

@@ -1,47 +1,45 @@
-import { Component, EventEmitter, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-admin-sidenav',
   templateUrl: './admin-sidenav.component.html',
-  styleUrls: ['./admin-sidenav.component.scss']
+  styleUrls: ['./admin-sidenav.component.scss'],
 })
 export class AdminSidenavComponent {
- 
- @Input() sideNavStatus : boolean = false;
+  @Input() sideNavStatus: boolean = false;
 
-  navItemsList : any[] = [
+  navItemsList: any[] = [
     {
-      'number' : 1,
-      'name' : 'dashboard',
-      'icon':'fas fa-tachometer-alt',
-      'path':''
+      number: 1,
+      name: 'dashboard',
+      icon: 'fas fa-tachometer-alt',
+      path: 'sub-dashboard',
     },
 
     {
-      'number' : 2,
-      'name' : 'quizes',
-      'icon':'fas fa-award',
-      'path' : 'quizes'
+      number: 2,
+      name: 'quizes',
+      icon: 'fas fa-award',
+      path: 'quizes',
     },
     {
-      'number' : 3,
-      'name' : 'questions',
-      'icon':'fas fa-book-open',
-      'path' : 'questions'
+      number: 3,
+      name: 'questions',
+      icon: 'fas fa-book-open',
+      path: 'questions',
     },
     {
-      'number' : 4,
-      'name' : 'categories',
-      'icon':'fas fa-th',
-      'path' : 'categories'
+      number: 4,
+      name: 'categories',
+      icon: 'fas fa-th',
+      path: 'categories',
     },
     {
-      'number' : 5,
-      'name' : 'results',
-      'icon':'fas fa-chart-bar',
-      'path' : 'results'
-    }
+      number: 5,
+      name: 'results',
+      icon: 'fas fa-chart-bar',
+      path: 'results',
+    },
   ];
-
 
 }

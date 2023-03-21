@@ -7,14 +7,14 @@ app-admin-navbar {
   width: 100%;
   top: 0;
   height: 4rem;
-  z-index: 2;
+ z-index: 2;
 }
 
 main {
   position: absolute;
   width: 100%;
   top: 4rem;
-  z-index: 1;
+ // z-index: 1;
 }
 
 app-admin-sidenav {
@@ -24,8 +24,7 @@ app-admin-sidenav {
   height: calc(100vh - 4rem);
   box-shadow: rgba(0, 0, 0, 0.15) 0px 15px 25px,
     rgba(0, 0, 0, 0.05) 0px 5px 10px;
-  border-top: 1px solid gray;
-  border-right: 1px solid gray;
+  border-right: 2px solid #ECECEC;
   overflow-x: hidden;
   white-space: nowrap;
 }

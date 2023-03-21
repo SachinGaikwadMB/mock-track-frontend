@@ -9,14 +9,14 @@ export class AdminDashboardComponent {
 
   sideNavStatus : boolean = true;
 
-   openNav() {
-    document.getElementById("mySidebar").style.width = "250px";
-    document.getElementById("main").style.marginLeft = "250px";
-  }
+  //  openNav() {
+  //   document.getElementById("mySidebar").style.width = "250px";
+  //   document.getElementById("main").style.marginLeft = "250px";
+  // }
   
-   closeNav() {
-    document.getElementById("mySidebar").style.width = "0";
-    document.getElementById("main").style.marginLeft= "0";
-  }
+  //  closeNav() {
+  //   document.getElementById("mySidebar").style.width = "0";
+  //   document.getElementById("main").style.marginLeft= "0";
+  // }
 
 }

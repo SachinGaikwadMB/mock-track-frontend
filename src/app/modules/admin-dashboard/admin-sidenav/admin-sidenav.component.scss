@@ -16,7 +16,12 @@
   line-height: 50px;
 }
 
- .nav-list-item:hover {
+.active {
+  background-color: #cfe1fd;
+  border-radius: 10px;
+}
+
+.nav-list-item:hover {
   background-color: #cfe1fd;
   border-radius: 10px;
 }
