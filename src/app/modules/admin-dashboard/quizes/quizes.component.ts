@@ -19,6 +19,8 @@ export class QuizesComponent implements OnInit {
   }
 
   public getAllQuizes() {
+
+
     this.quizService.getAllQuizes().subscribe((resp) => {
       this.quizesData = resp['data'];
       console.log(this.quizesData);
